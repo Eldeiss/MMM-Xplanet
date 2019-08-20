@@ -9,6 +9,7 @@ Module.register("MMM-Xplanet", {
 		updateInterval: 10*60*1000, // In milliseconds
 		x: 200, // x dimension
 		y: 200, // y dimension
+    animationSpeed: 2000,
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -17,10 +18,11 @@ Module.register("MMM-Xplanet", {
   // MM start function
 	start: function() {
 		var self = this;
+    self.updateDom(self.config.animationSpeed);
 
 		// Schedule update timer.
 		setInterval(function() {
-			self.updateDom();
+			self.updateDom(self.config.animationSpeed);
 		}, this.config.updateInterval);
 	},
 

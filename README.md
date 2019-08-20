@@ -4,7 +4,7 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/
 
 Displays the realtime image of planets from the Xplanet program.
 
-![Demo Image](https://github.com/Eldeiss/MMM-Xplanet/blob/master/img/2019-08-17 Example.png)
+![Demo Image](https://github.com/Eldeiss/MMM-Xplanet/blob/master/img/2019-08-17_Example.png)
 
 ## Using the module
 
@@ -44,25 +44,26 @@ pm2 save
 To use this module, add the following configuration block to the modules array in the `config/config.js` file:
 
 ```js
-    {
-      module: "MMM-Xplanet",
-			position: "bottom_left",
-			config: {
-				updateInterval: 60000, // In Milliseconds
-				x: 200,
-				y: 200,
-			}
-    },
+{
+  module: "MMM-Xplanet",
+  position: "bottom_left",
+	config: {
+		updateInterval: 10*60*1000, // In Milliseconds
+		x: 200,
+		y: 200,
+	}
+},
 ```
 
 ## Configuration options
 
 | Option           | Description                                       | Default              | Possible
 |----------------- |---------------------------------------------------|----------------------|-----------
-| `updateInterval` | *Optional* Miliseconds between updates            | `60000` (1 min)      | any
+| `updateInterval` | *Optional* Miliseconds between updates            | `600000` (10 min)    | any
 | `x`              | *Optional* Width (recommended <300)               | `200`                | >0
 | `y`              | *Optional* Height (recommended <300)              | `200`                | >0
+| `animationSpeed` | *Optional* How long the fade of photos should take| `2000`               | >0
 
 ## Special thanks
 
-This module is initially base on the code of the MMM-Moonphase module from NolanKingdon (https://github.com/NolanKingdon/MMM-MoonPhase) with many modification to implement Xplanet software.
+This module is initially based on the code of the MMM-Moonphase module from NolanKingdon (https://github.com/NolanKingdon/MMM-MoonPhase) with many modification to implement Xplanet software.
